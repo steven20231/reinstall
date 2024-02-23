@@ -1380,7 +1380,7 @@ EOF
 
         # 在这里修改密码，而不是用cloud-init，因为我们的默认密码太弱
         sed -i 's/enforce=everyone/enforce=none/' $os_dir/etc/security/passwdqc.conf
-        echo 'root:123@@@' | chroot $os_dir chpasswd >/dev/null
+        echo 'root:123!@#' | chroot $os_dir chpasswd >/dev/null
         sed -i 's/enforce=none/enforce=everyone/' $os_dir/etc/security/passwdqc.conf
 
         # 下载仓库，选择 profile
@@ -2343,7 +2343,7 @@ EOF
 hwclock -s || true
 
 # 设置密码，安装并打开 ssh
-echo root:123@@@ | chpasswd
+echo root:123!@# | chpasswd
 printf '\nyes' | setup-sshd
 
 extract_env_from_cmdline
