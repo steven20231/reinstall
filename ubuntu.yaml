@@ -75,8 +75,8 @@ autoinstall:
       expire: false
       # 20.04 arm 需要
       list: |
-        root:123@@@
+        root:123!@#
       users:
         - name: root
-          password: 123@@@
+          password: 123!@#
           type: text
